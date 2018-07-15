@@ -15,7 +15,7 @@ Udacity/
 ## Projects (Links to Project Code)
 
 ##### The following is a list of projects i sucessfully completed while doing my Nanodegree.
-##### 1. [Build a Portfolio Site](https://github.com/jaikathuria/Front-End-Web-Developer-Nanodegree/tree/master/Project-3)
+##### 1. [Build a Portfolio Site](https://github.com/Lingachan/Udacity/Project1)
 
 ## Links to Live Project Demo
 ____________________________________________________________________________________________
