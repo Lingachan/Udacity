@@ -17,4 +17,4 @@ Udacity/
 
 ## Links to Live Project Demo
 ____________________________________________________________________________________________
-### 1. [My Portfolio](https://jaikathuria.github.io/Udacity/Project1/)
+### 1. [My Portfolio](https://jaikathuria.github.io/Project1/)
