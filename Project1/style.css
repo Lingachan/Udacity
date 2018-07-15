@@ -114,22 +114,28 @@
     .card {
         width:calc(33.3% - 15px) !important;
     }
-.section {
-    width:1600px;
-}
-.container {
-    width:1600px;
-}
-.about_me {
-    position: absolute;
-    width:40%;
-    text-align: center;
-    color:#49a3ff; 
-    background-color: transparent;
-    font-size: 32px;
-    margin-left: 60%;
-    margin-top: 150px;
-}
+    .name {
+        font-size: 72px;
+    }
+    .profile {
+        font-size: 28px;
+    }
+    .section {
+        width:1600px;
+    }
+    .container {
+        width:1600px;
+    }
+    .about_me {
+        position: absolute;
+        width:40%;
+        text-align: center;
+        color:#49a3ff; 
+        background-color: transparent;
+        font-size: 32px;
+        margin-left: 60%;
+        margin-top: 150px;
+    }
 }
 @media screen and (min-width:1000px) and (max-width:1579px) {
     .card {
