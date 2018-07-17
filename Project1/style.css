@@ -3,7 +3,7 @@
     padding:0px;
     background-color:#fff;
 }
-.name {
+.name>h1 {
     text-align: right;
     margin:30px 60px 15px 60px;
     color:#2d3c49;
@@ -22,10 +22,10 @@
     height:100%;
     width:100%;
 }
-.profile {
+.profile>h3 {
     text-align: right;
     margin-top:5px;
-    margin-right:60px;
+    margin-right:30px;
     color:#2d3c49;
 }
 .section {
@@ -115,10 +115,10 @@
     .card {
         width:calc(33.3% - 15px) !important;
     }
-    .name {
+    .name>h1 {
         font-size: 72px;
     }
-    .profile {
+    .profile>h3 {
         font-size: 28px;
     }
     .section {
@@ -142,10 +142,10 @@
     .card {
         width:calc(33.3% - 15px) !important;
     }
-    .name {
+    .name>h1 {
         font-size: 72px;
     }
-    .profile {
+    .profile>h3 {
         font-size: 28px;
     }
     .window {
@@ -176,10 +176,10 @@
         width:75%;
         height:75%;
     }
-    .name {
+    .name>h1 {
         font-size: 52px;
     }
-    .profile {
+    .profile>h3 {
         font-size: 18px;
     }
 .window {
@@ -200,12 +200,12 @@
         width:75%;
         height:75%;
     }
-    .name {
+    .name>h1 {
         font-size: 20px;
-        margin:10px 60px 15px 0;
+        margin:10px 30px 15px 0;
 
     }
-    .profile {
+    .profile>h3 {
         font-size: 12px;
     }
     .window {
