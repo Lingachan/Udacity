@@ -13,13 +13,14 @@
     border-bottom: 3px solid #7d97ad;
     margin-bottom: 30px;
 }
-.f_right {
-    float: right;
+.flex {
+    display: flex;
+    justify-content: space-between;
 }
 .logo {
     text-align:left;
-    height:200px;
-    width:200px;
+    height:100%;
+    width:100%;
 }
 .profile {
     text-align: right;
@@ -78,7 +79,7 @@
     height:400px;
     background-color:#fff;
     border:1px solid #e0ebfc;
-    box-shadow: 0 2px 8px 1px rgba(224, 235, 252);
+    box-shadow: 0 2px 8px 1px rgb(224, 235, 252);
     order:-1;
 }
 .title_bar {
@@ -154,7 +155,7 @@
         height:400px;
         background-color:#fff;
         border:1px solid #e0ebfc;
-        box-shadow: 0 2px 8px 1px rgba(224, 235, 252);
+        box-shadow: 0 2px 8px 1px rgb(224, 235, 252);
     }
     .about_me {
         position: absolute;
@@ -172,8 +173,8 @@
         width:calc(33.3% - 15px) !important;
     }
     .logo {
-        width:150px;
-        height:150px;
+        width:75%;
+        height:75%;
     }
     .name {
         font-size: 52px;
@@ -188,7 +189,7 @@
     height:400px;
     background-color:#fff;
     border:1px solid #e0ebfc;
-    box-shadow: 0 2px 8px 1px rgba(224, 235, 252);
+    box-shadow: 0 2px 8px 1px rgb(224, 235, 252);
 }
 }
 @media screen and (min-width:320px) and (max-width:699px) {
@@ -196,8 +197,8 @@
         width: 100%;
     }
     .logo {
-        width:75px;
-        height:75px;
+        width:75%;
+        height:75%;
     }
     .name {
         font-size: 20px;
@@ -214,7 +215,7 @@
         height:400px;
         background-color:#fff;
         border:1px solid #e0ebfc;
-        box-shadow: 0 2px 8px 1px rgba(224, 235, 252);
+        box-shadow: 0 2px 8px 1px rgb(224, 235, 252);
     }
 }
 /* skills */
