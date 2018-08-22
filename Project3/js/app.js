@@ -50,14 +50,6 @@ function shuffle(array) {
     return array;
 }
 
-// Create card
-function createCard() {
-  let cardType = shuffle(cards);
-  cardType.forEach(function(card) {
-    $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
-  })
-}
-
 // Update stars
 function updateStars() {
   if (moves === 1) {
@@ -78,10 +70,21 @@ function updateStars() {
   }
 }
 
+
+// Create card
+function createCard() {
+  let cardType = shuffle(cards);
+  cardType.forEach(function(card) {
+    $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
+  })
+}
+
 // Mathching card
 function cardMatch() {
-  $(".card").on("click", function() {
-    if ($(this).hasClass("open show")) { return; }
+  $(".card").on('click', function() {
+    if ($(this).hasClass("open show")) {
+       return 0; 
+      }
     $(this).toggleClass("flipIt open show");
     openCard.push($(this));
     startGame = true;
@@ -94,7 +97,9 @@ function cardMatch() {
       similarCard += 1;
       moves++;
       closeCards();
+      if(similarCard === 8) {
       gameResult();
+      }
       } else {
       openCard[0][0].classList.add("shake", "wrong");
       openCard[1][0].classList.add("shake", "wrong");
@@ -127,8 +132,6 @@ function disableClick() {
 
 // Open popup
 function gameResult() {
-
-  if (similarCard === 8) {
     swal({
       title: 'Congratulations',
       type: 'success',
@@ -141,11 +144,10 @@ function gameResult() {
       cancelButtonColor: '#aa7ecd'
   }).then(function() {
       location.reload();
-  }, function(dismiss) {
-      console.log('Yes');
+  }, function(close) {
+      console.log('Close the Greeting');
   });
  }
-}
 
 // Call functions
 shuffle(cards);
