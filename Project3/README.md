@@ -15,8 +15,8 @@ The following libraries been used for this Memory game development
     
 ## Interface
 
-![New Game]()
-![Finished Game]()
+![New Game](https://github.com/Lingachan/Udacity/blob/master/Project3/img/Newgame.JPG?raw=true)
+![Finished Game](https://github.com/Lingachan/Udacity/blob/master/Project3/img/gameWon.JPG?raw=true)
 
 ## Play Game
 
