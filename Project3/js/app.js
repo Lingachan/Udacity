@@ -1,40 +1,64 @@
 // timer
 function timeFormat ( val ) {
   return val > 9 ? val : "0" + val; 
+  console.log(timeFormat);
  }
-
-function timer() {
- let timer;
- let clicks = 0;
+function timer(clicks) {
  $(".card").on("click", function() {
    clicks += 1;
    if (clicks === 1) {
      var sec = 0;
-     timer = setInterval( function(){
-       $("#sec").html(timeFormat(++sec % 60));
-       $("#min").html(timeFormat(parseInt(sec / 60, 10)));
+     time = setInterval( function(){
+     secTaken = timeFormat(++sec %60);
+     $("#sec").html(secTaken);
+     minTaken = timeFormat(parseInt(sec / 60, 10))
+     $("#min").html(minTaken);
      }, 1000);
    }
  })
+ return secTaken, minTaken;
 }
 
 // Function to restart the game on icon click
 function restartGame() {
-  $("#restart").on("click", function() {
-      location.reload()
-  });
-  }
+  $("#restart").on('click', function() {
+  playAgain();
+  console.log(secTaken);
+  })
+}
 
+function playAgain() {
+  $(".card").removeClass("show open match flipIt pop shake wrong");
+  clearTimeout(time);
+  const freezeTime = "00";
+  $("#sec").html(freezeTime);
+  $("#min").html(freezeTime);
+   var click = 0;
+   moves = 0;
+   starRating = "3";
+   stars = 3;
+   const move = 0;
+   $("#one").addClass("fa-star");
+   $("#two").addClass("fa-star");
+   $("#three").addClass("fa-star");
+   updateStars(moves);
+  timer(click);
+}
 // card symbols
-let cards = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o", "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf", "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
-
+const cardList = ["fa-diamond","fa-paper-plane-o","fa-anchor","fa-bolt","fa-cube","fa-leaf", "fa-bicycle", "fa-bomb"];
+const doubleCardList = cardList.concat(cardList);
 // global variables
 let openCard = [];
+let stars = 3;
 let moves = 0;
-let starts = 3;
 let similarCard = 0;
 let startGame = false;
 let starRating = "3";
+let clicks = 0;
+let time;
+let minTaken;
+let secTaken;
+
 
 // Shuffle cards (function from http://stackoverflow.com/a/2450976)
 function shuffle(array) {
@@ -51,7 +75,7 @@ function shuffle(array) {
 }
 
 // Update stars
-function updateStars() {
+function updateStars(moves) {
   if (moves === 1) {
     $("#moveTxt").text(" Move");
   } else {
@@ -64,7 +88,7 @@ function updateStars() {
   } else if (moves >= 16 && moves <= 24) {
     $("#one").removeClass("fa-star");
     starRating = "2";
-  } else if (moves > 24) {
+  } else if (moves > 1) {
     $("#two").removeClass("fa-star");
     starRating = "1";
   }
@@ -73,7 +97,7 @@ function updateStars() {
 
 // Create card
 function createCard() {
-  let cardType = shuffle(cards);
+  let cardType = shuffle(doubleCardList);
   cardType.forEach(function(card) {
     $(".deck").append('<li><i class="card fa ' + card + '"></i></li>');
   })
@@ -98,6 +122,7 @@ function cardMatch() {
       moves++;
       closeCards();
       if(similarCard === 8) {
+      clearTimeout(time);
       gameResult();
       }
       } else {
@@ -108,7 +133,7 @@ function cardMatch() {
       moves++;
       }
     }
-  updateStars();
+  updateStars(moves);
   })
 }
 
@@ -135,7 +160,7 @@ function gameResult() {
     swal({
       title: 'Congratulations',
       type: 'success',
-      text: 'You have won the game with ' + moves + '. You got ' + starRating + ' Stars.',
+      text: 'You have won the game with ' + moves + ' moves. You got ' + starRating + ' Stars Time Taken is ' + minTaken + ' minutes and ' + secTaken + ' seconds.',
       allowOutsideClick: false,
       showCancelButton: true,
       confirmButtonText: 'Play Again',
@@ -143,15 +168,15 @@ function gameResult() {
       cancelButtonText: 'Close',
       cancelButtonColor: '#aa7ecd'
   }).then(function() {
-      location.reload();
+      playAgain();
   }, function(close) {
       console.log('Close the Greeting');
   });
  }
 
 // Call functions
-shuffle(cards);
+shuffle(doubleCardList);
 createCard();
 cardMatch();
-timer();
+timer(clicks);
 restartGame();

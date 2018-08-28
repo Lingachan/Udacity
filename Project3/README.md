@@ -4,6 +4,19 @@
 
 The goal is to match each card's icon with its pair. There are 16 cards and 8 pairs total.Click on a card, remember its symbol and spot in the grid, then continue clicking other cards until you find its match.If You made lot of moves leads to reduce star.
 
+## Dependencies
+
+The following libraries been used for this Memory game development
+
+    * Bootstap
+    * Coda Font style
+    * Jquery
+    * SweetAlert
+    
+## Interface
+
+![New Game]()
+![Finished Game]()
 
 ## Play Game
 
