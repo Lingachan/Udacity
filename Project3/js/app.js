@@ -88,7 +88,7 @@ function updateStars(moves) {
   } else if (moves >= 16 && moves <= 24) {
     $("#one").removeClass("fa-star");
     starRating = "2";
-  } else if (moves > 1) {
+  } else if (moves > 25) {
     $("#two").removeClass("fa-star");
     starRating = "1";
   }

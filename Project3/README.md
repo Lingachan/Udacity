@@ -4,6 +4,10 @@
 
 The goal is to match each card's icon with its pair. There are 16 cards and 8 pairs total.Click on a card, remember its symbol and spot in the grid, then continue clicking other cards until you find its match.If You made lot of moves leads to reduce star.
 
+## Tips to Play
+
+If you successfully found  all the matches within 16 moves you will get 3 stars, within 24 moves you will get 2 stars and above 25 moves you will get 1 star.
+
 ## Dependencies
 
 The following libraries been used for this Memory game development
@@ -16,7 +20,7 @@ The following libraries been used for this Memory game development
 ## Interface
 
 ![New Game](https://github.com/Lingachan/Udacity/blob/master/Project3/img/Newgame.JPG?raw=true)
-![Finished Game](https://github.com/Lingachan/Udacity/blob/master/Project3/img/gameWon.JPG?raw=true)
+      ![Finished Game](https://github.com/Lingachan/Udacity/blob/master/Project3/img/gameWon.JPG?raw=true)
 
 ## Play Game
 
