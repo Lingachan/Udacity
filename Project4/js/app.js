@@ -1,16 +1,9 @@
-/**
- * Generate a random number between two numbers.
- *  {number} min The minimum number to return.
- *  {number} max The maximum number to return.
- * return {number} A random number between min and max.
- */
 var random = function (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 };
 
 /**
  * The heart image for an item and to display lives left.
- * type string
  */
 var heart = '<img src = "images/item-4.png">';
 
@@ -40,7 +33,7 @@ Enemy.prototype.update = function(dt) {
         this.reset();
     }
      /**
-     * Add another enemy to the array every 5th level.
+     * Add additional enemy Bug to the array every 5th multiple level.
      */
      var length = allEnemies.length;
 
@@ -106,10 +99,6 @@ Player.prototype.update = function() {
      */
     if (Math.abs(item.x - this.x) < 50 && Math.abs(item.y - this.y) < 66) {
 
-         /**
-         * Check item, play correct sound, remove item,
-         *     and add to life or score if collision happens.
-         */
         if (item.type === 4) {
             this.lives.push(heart);
         }
@@ -130,18 +119,10 @@ Player.prototype.update = function() {
      */
     else if (this.y < 45) {
 
-        /**
-         * Increase level, play a sound, create a new item, and
-         *     reset player if a door collision happens.
-         */
         if (Math.abs(this.exit * 101 - this.x) < 50) {
             this.level ++;
             item = new Item();
         }
-
-        /**
-         * Decrease level and play a sound if a water collision happens.
-         */
         else {
             this.lives.pop();
         }
@@ -152,12 +133,7 @@ Player.prototype.update = function() {
 }
 
 Player.prototype.reset = function() {
-    /**
-     * If lives equals zero, remove the last heart, play a sound,
-     *     and ask to quit or restart.  Otherwise, reset the player
-     *     position to the bottom row.
-     *  dialogue box
-     */
+
     if (this.lives.length === 0) {
         document.getElementsByClassName('lives')[0].innerHTML = 'Lives:  ' + this.lives;
         endGame();
@@ -193,8 +169,7 @@ Player.prototype.handleInput = function(key) {
     }
 
     /**
-     * Pause or resume the game when space is pressed.
-     *  dialogue box
+     * Pause or resume the game.
      */
     else if (key=== 'space') {
         if (this.paused) {
@@ -208,8 +183,7 @@ Player.prototype.handleInput = function(key) {
 
 
     /**
-     * Pause the game and ask to quit or resume when q is pressed.
-     *  dialogue box
+     *  dialogue box to quit the game
      */
     else if (key === 'q') {
         this.paused = true;
@@ -276,7 +250,7 @@ var item = new Item();
 
 
 /*variables*/
-var renderFlag = false;
+var renderGame = false;
 var userSelections = [false]; 
 var avatarImages = [
     'images/char-boy.png',
@@ -312,14 +286,14 @@ function startClick () {
     }
     if (selectionCount === 1) {
         document.getElementById('selectionPopup').style.display = 'none';
-        renderFlag = true;
+        renderGame = true;
     } else {
         alert('Please select avatar.');
     }
 }
 
 function endGame () {
-    renderFlag = false;
+    renderGame = false;
     document.getElementById('pointsSummary').innerHTML = totalpoints;
     document.getElementById('gameOverPopup').style.display = 'block';
 }

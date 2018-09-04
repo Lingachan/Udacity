@@ -23,8 +23,6 @@ var Engine = (function(global) {
     };
 
     function init() {
-
-        
         lastTime = Date.now();
         main();
     }
@@ -52,9 +50,7 @@ var Engine = (function(global) {
         document.getElementsByClassName('score')[0].innerHTML = 'Score:  ' +
         player.score;
 
-
-
-        var rowImages = [
+        var canvasImages = [
                 'images/water-block.png',
                 'images/stone-block.png',
                 'images/stone-block.png',
@@ -63,32 +59,18 @@ var Engine = (function(global) {
                 'images/grass-block.png'
             ],
 
-            numRows = 6,
-            numCols = 8,
+            noRows = 6,
+            noCols = 8,
             row, col;
-
-        /**
-         * Loop through the number of rows and columns defined above
-         *     and, using the rowImages array, draw the correct image for that
-         *     portion of the 'grid' and add the exit door.
-         */
-        for (row = 0; row < numRows; row++) {
-            for (col = 0; col < numCols; col++) {
-
-                /**
-                 * The drawImage function of the canvas' context element
-                 *     requires 3 parameters: the image to draw, the x coordinate
-                 *     to start drawing and the y coordinate to start drawing.
-                 *     Resources helpers refer to the images
-                 *     so that they get the benefits of caching these images, since
-                 *     they're used over and over.
-                 */
+        /* exit point setter*/
+        for (row = 0; row < noRows; row++) {
+            for (col = 0; col < noCols; col++) {
                 if (row == 0 && col == player.exit) {
                     ctx.drawImage(Resources.get('images/grass-block.png'), col * 101, row * 83);
                 }
 
                 else {
-                    ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                    ctx.drawImage(Resources.get(canvasImages[row]), col * 101, row * 83);
                 }
             }
         }
@@ -97,17 +79,13 @@ var Engine = (function(global) {
     }
 
     function renderEntities() {
-        if (renderFlag === true){
+        if (renderGame === true){
             allEnemies.forEach(function(enemy) {
                 enemy.render();
             });
             player.render();
             item.render();
         }
-    }
-
-    function reset() {
-        // noop
     }
 
     Resources.load([
