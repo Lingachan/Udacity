@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frogger Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
+</head>
+<body>
+	<div id="selectionPopup">
+		<h1 class="title">Frogger Game!</h1>
+
+		<hr>
+			<h1>Select Avatar</h1>
+			<img id="avatar0" class="avatarImg" onclick="avatarClick(this.id, 0)" src="images/char-boy.png" />
+			<img id="avatar1" class="avatarImg" onclick="avatarClick(this.id, 1)" src="images/char-cat-girl.png" />
+			<img id="avatar2" class="avatarImg" onclick="avatarClick(this.id, 2)" src="images/char-horn-girl.png" />
+			<img id="avatar3" class="avatarImg" onclick="avatarClick(this.id, 3)" src="images/char-pink-girl.png" />
+			<img id="avatar4" class="avatarImg" onclick="avatarClick(this.id, 4)" src="images/char-princess-girl.png" />
+        <hr>
+        <div class="instructions">
+            <h1> Game Play Controls</h1>
+                <p>Use arrows or W,S,A,D Keys To Move!</p>
+                <p>Press Space to pause</p>					
+        </div>
+        <hr>
+			<button id="startGame" class="button" onclick="startClick();">Start Game</button>
+		<hr>
+	</div>
+
+	<div id="gameOverPopup">
+    	<h1>Game Over!</h1>
+    	<hr>
+	    	<div id="gameSummary">
+	    		<h1>You Scored<h1>
+	    		<h1 id="pointsSummary">0</h1>
+	    		<h1>Points</h1>
+	    	</div>
+	    <hr>
+	    	<h2>Press The Reset Button To Play Again!!</h2>
+	    <hr>
+    </div>
+
+	<div class="stats">
+		<ul>
+	        <li class="level"></li>
+	        <li class="score"></li>
+	        <li class="lives"></li>
+	    </ul>
+	</div>
+
+	
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+
+    <button id="resetButton" class="button" onclick="history.go(0)">Reset</button>
+
+</body>
+</html>

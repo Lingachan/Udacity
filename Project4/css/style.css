@@ -1,0 +1,118 @@
+body {
+    text-align: center;
+    background-color: #fff; 
+    margin: auto;
+    width:810px;
+}
+canvas {
+    margin: 45px 0px 0px 0px;
+}
+p{
+    font :20px "Open Sans",sans-serif;
+}
+.selector {
+    background-image: url('../images/Selector.png');
+    height:150px;
+    width:78px;
+    background-size: cover;
+}
+h1,h2,h3{
+    color: #19182e;
+}
+.title {
+    font-size: 64px;
+}
+.instructions h1{
+    text-decoration: underline;
+}
+.stats{
+	 font: bold 32px "Open Sans", sans-serif;
+	 position:absolute;
+     color:#19182e;
+}
+li{
+	padding:0 50px;	
+	text-align: center;
+	display: inline-flex;
+	list-style-type: none;
+}
+img {
+    height: 40px;
+    width: 20px;
+    padding: 0 5px;
+}
+#selectionPopup {
+    z-index: 1000;
+    position: absolute;
+    width: 820px;
+    height: 700px;
+    margin: 25px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    text-align: center;
+}
+.avatarImg {
+	height: 125px;
+	width: 73px;
+	margin: 0px 10px 15px 10px;
+    cursor: pointer;
+    border: 3px solid white;
+    border-radius: 6px;
+}
+
+#startGame {
+    width: 200px;
+    font-weight: bold;
+    color: white;
+    background-color: #FA5882;
+    border: 1px solid #FE2E2E!important;
+}
+
+#gameOverPopup {
+    z-index: 1000;
+    position: absolute;
+    width: 820px;
+    height: 600px;
+    margin: 10px 0px 0px 0px;
+    padding: 20px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    text-align: center;
+    display: none;
+}
+#gameSummary {
+    margin: 100px 0px 100px 0px;
+}
+
+#pointsSummary {
+    margin: 13px 0px 10px 0px;
+    font-size: 400%;
+}
+
+.button {
+	height: 40px;
+	width: 120px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid #2E2EFE;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: white;
+}
+
+
+#signature{
+	
+	font:  26px "Open Sans", sans-serif;
+	overflow: hidden;
+    color:#FE2E2E;
+    margin: 5px 0px 10px 0px;
+
+}
+
