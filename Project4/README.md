@@ -1,5 +1,10 @@
 # Memory Game Project
 
+## Feel Free To use The Code:
+
+    * Clone or download the Project to the desired folder in your computer.
+    * Run with local Server or open the index.html file with your browser.
+
 ## How To Play:
 
 Use Arrow Keys or w,s,d,a to move the avatar,You have to reach only on the land area to reach next level.
